@@ -70,4 +70,4 @@ export {
   isBlank,
   isNone,
   isEmpty
-}
+};

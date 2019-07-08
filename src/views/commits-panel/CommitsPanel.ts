@@ -31,7 +31,7 @@ export default class CommitsPanel {
   }
 
   private getWebviewContent(comitsPerAuthor: any | []) {
-    const labels = comitsPerAuthor.map((commit:any) => `'${commit.author}'`).join(', ');
+    const labels = comitsPerAuthor.map((commit:any) => `'${commit.author} (${commit.totalCommits})'`).join(', ');
     const data = (comitsPerAuthor.map((commit:any) => commit.totalCommits)).toString();
     return `<!DOCTYPE html>
           <html lang="en">
@@ -61,72 +61,17 @@ export default class CommitsPanel {
                     }]
                   },
                   options: {
-                    maintainAspectRatio: true
+                    maintainAspectRatio: true,
+                    responsive: true,
+                    legend: {
+                      display: true,
+                      position: 'right',
+                    }
                   }
                 });
               </script>
             </body>
             <style>
-              .container {
-                padding-left: 20px;
-              }
-              .header {
-                margin-top: 20px;
-                margin-bottom: 20px;
-                color: #AAAEB3;
-                font-size: 14px;
-                font-weight: normal;
-              }
-              .block {
-                margin-bottom: 20px;
-              }
-              .username, .password {
-                background-color: rgba(194,199,203,0.2); 
-                border-radius: 24px; 
-                height: 38px; 
-                width: 300px; 
-                border:none; 
-                font-size: 16px;
-                padding-left: 20px
-              }
-              input:focus
-                border:none;
-              }
-              .input-label {
-                font-size: 14px;
-                display: inline;
-                margin-bottom 10px;
-                color: #98A5B3;
-              }
-              .btn {
-                box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
-                border-radius: 20px;
-                width: 120px;
-                height: 40px;
-                font-size: 14px;
-                font-weight: 500;
-                border:none;
-                cursor: pointer
-              }
-              .footer {
-                margin-top: 20px;
-              }
-              .btn-signin {
-                background-color: #00A9FF;
-                color: #FFFFFF;
-              }
-              .btn-signup {
-                background-color: #E6E6E6;
-                color: #98A5B3;
-                margin-left: 15px;
-              }
-              .signup-link {
-                color: #00A9FF;
-                font-size: 14px;
-                font-weight: 500;
-                margin-left: 15px;
-                text-decoration: none;
-              }
               body.vscode-light .username, body.vscode-light .password {
                 color: #616466;
               }
