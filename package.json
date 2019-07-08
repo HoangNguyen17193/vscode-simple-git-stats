@@ -34,7 +34,27 @@
         "command": "extension.helloWorld",
         "title": "Hello World"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Simple GIT Stats",
+      "properties": {
+        "commits.showLegend": {
+          "type": "boolean",
+          "default": true
+        },
+        "commits.legendPosition": {
+          "type": "string",
+          "default": "right",
+          "enum": [
+            "top",
+            "bottom",
+            "right",
+            "left"
+          ]
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
