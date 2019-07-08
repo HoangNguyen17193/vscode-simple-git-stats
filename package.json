@@ -2,6 +2,7 @@
   "name": "simple-git-stats",
   "displayName": "Simple GIT Stats",
   "description": "",
+  "publisher": "Tino",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.36.0"
@@ -9,9 +10,23 @@
   "categories": [
     "Other"
   ],
+  "keywords": [
+    "git",
+    "Statistics",
+    "stats",
+    "commits",
+    "chart",
+    "git stats"
+  ],
+  "repository": {
+    "url": "https://github.com/HoangNguyen17193/vscode-simple-git-stats"
+  },
   "activationEvents": [
     "onCommand:extension.helloWorld"
   ],
+  "homepage": "https://github.com/HoangNguyen17193/vscode-simple-git-stats",
+  "preview": false,
+  "license": "MIT",
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
