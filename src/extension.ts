@@ -1,14 +1,11 @@
 import * as vscode from "vscode";
-import HistoryService from "./services/history";
+import Controller from './controllers/mainController';
 
 export function activate(context: vscode.ExtensionContext) {
+  const controller = new Controller();
   let disposable = vscode.commands.registerCommand("extension.helloWorld",() => {
-      HistoryService.getAllCommitsPerAuthor(vscode.workspace.rootPath || "")
-        .then((commits: any) => {
-          console.log(commits);
-        }
-      );
-    }
+    controller.showCommitsPanel();
+  }
   );
   context.subscriptions.push(disposable);
 }
