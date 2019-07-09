@@ -6,7 +6,7 @@ export default class CommitsPanel {
   private readonly _panel: vscode.WebviewPanel;
   private _disposables: vscode.Disposable[] = [];
 
-  public static createOrShow(comitsPerAuthor: any) {
+  public static createOrShow(comitsPerAuthor: any, config: any) {
     const column = vscode.window.activeTextEditor ? vscode.window.activeTextEditor.viewColumn : undefined;
     if (CommitsPanel.currentPanel) {
       CommitsPanel.currentPanel._panel.reveal(column);
@@ -19,20 +19,21 @@ export default class CommitsPanel {
       }
     );
 
-    CommitsPanel.currentPanel = new CommitsPanel(panel, comitsPerAuthor);
+    CommitsPanel.currentPanel = new CommitsPanel(panel, comitsPerAuthor, config);
   }
 
-  private constructor(panel: vscode.WebviewPanel, comitsPerAuthor:any) {
+  private constructor(panel: vscode.WebviewPanel, comitsPerAuthor:any, config:any) {
     this._panel = panel;
     this._panel.onDidDispose(() => this.dispose(), null, this._disposables);
     this._panel = panel;
-    const webViewContent = this.getWebviewContent(comitsPerAuthor);
+    const webViewContent = this.getWebviewContent(comitsPerAuthor, config);
     this._panel.webview.html = webViewContent;
   }
 
-  private getWebviewContent(comitsPerAuthor: any | []) {
+  private getWebviewContent(comitsPerAuthor: any | [], config:any) {
     const labels = comitsPerAuthor.map((commit:any) => `'${commit.author} (${commit.totalCommits})'`).join(', ');
     const data = (comitsPerAuthor.map((commit:any) => commit.totalCommits)).toString();
+    const bodyStyle = (config.width > 0 && config.height >0) ? `body { width:  ${config.width}px; height: ${config.width}px}` : '';
     return `<!DOCTYPE html>
           <html lang="en">
             <head>
@@ -66,14 +67,15 @@ export default class CommitsPanel {
                     backgroundColor: '#c1c1c1',
                     responsive: true,
                     legend: {
-                      display: true,
-                      position: 'right',
+                      display: ${config.showLegend},
+                      position: '${config.legendPosition}',
                     }
                   }
                 });
               </script>
             </body>
             <style>
+              ${bodyStyle}
               body.vscode-light .username, body.vscode-light .password {
                 color: #616466;
               }
