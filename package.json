@@ -1,7 +1,7 @@
 {
   "name": "simple-git-stats",
   "displayName": "Simple GIT Stats",
-  "description": "",
+  "description": "Simple and efficient way to view statistics in git repository directly within Visual Studio Code.",
   "publisher": "Tino",
   "version": "0.0.1",
   "engines": {
