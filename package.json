@@ -39,11 +39,11 @@
       "type": "object",
       "title": "Simple GIT Stats",
       "properties": {
-        "commits.showLegend": {
+        "commitChart.showLegend": {
           "type": "boolean",
           "default": true
         },
-        "commits.legendPosition": {
+        "commitChart.legendPosition": {
           "type": "string",
           "default": "right",
           "enum": [
@@ -52,6 +52,12 @@
             "right",
             "left"
           ]
+        },
+        "commitChart.width": {
+          "type":"integer"
+        },
+        "commitChart.height": {
+          "type":"integer"
         }
       }
     }

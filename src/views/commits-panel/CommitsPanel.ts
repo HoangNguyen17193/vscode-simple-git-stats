@@ -57,11 +57,13 @@ export default class CommitsPanel {
                     labels: [${labels}],
                     datasets: [{
                         data: [${data}],
+                        borderWidth: 2,
                         backgroundColor: ['#00bcd4', '#ffa0d2', '#ffa726', '#00bfa5', '#03a9f4', '#1976d2', '#c1c1c1', '#127ffc']
                     }]
                   },
                   options: {
                     maintainAspectRatio: true,
+                    backgroundColor: '#c1c1c1',
                     responsive: true,
                     legend: {
                       display: true,
