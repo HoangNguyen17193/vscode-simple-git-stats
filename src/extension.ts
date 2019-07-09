@@ -3,7 +3,7 @@ import Controller from './controllers/mainController';
 
 export function activate(context: vscode.ExtensionContext) {
   const controller = new Controller();
-  let disposable = vscode.commands.registerCommand("extension.helloWorld",() => {
+  let disposable = vscode.commands.registerCommand("GitStats.viewCommits",() => {
     controller.showCommitsPanel();
   }
   );

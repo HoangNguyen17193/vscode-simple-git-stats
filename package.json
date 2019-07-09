@@ -12,27 +12,30 @@
   ],
   "keywords": [
     "git",
-    "Statistics",
+    "contribution",
+    "statistics",
     "stats",
-    "commits",
+    "commit",
     "chart",
+    "analytics",
     "git stats"
   ],
   "repository": {
     "url": "https://github.com/HoangNguyen17193/vscode-simple-git-stats"
   },
   "activationEvents": [
-    "onCommand:extension.helloWorld"
+    "*"
   ],
   "homepage": "https://github.com/HoangNguyen17193/vscode-simple-git-stats",
   "preview": false,
+  "icon": "resources/logo.png",
   "license": "MIT",
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension.helloWorld",
-        "title": "Hello World"
+        "command": "GitStats.viewCommits",
+        "title": "Simple Git Stats: View Commits"
       }
     ],
     "configuration": {
@@ -54,10 +57,10 @@
           ]
         },
         "commitChart.width": {
-          "type":"integer"
+          "type": "integer"
         },
         "commitChart.height": {
-          "type":"integer"
+          "type": "integer"
         }
       }
     }
