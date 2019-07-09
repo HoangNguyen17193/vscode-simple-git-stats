@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import Constants from '../../utils/constants';
 
 export default class CommitsPanel {
   public static currentPanel: CommitsPanel | undefined;
@@ -59,7 +60,7 @@ export default class CommitsPanel {
                     datasets: [{
                         data: [${data}],
                         borderWidth: 2,
-                        backgroundColor: ['#00bcd4', '#ffa0d2', '#ffa726', '#00bfa5', '#03a9f4', '#1976d2', '#c1c1c1', '#127ffc']
+                        backgroundColor: ${Constants.colors}
                     }]
                   },
                   options: {
