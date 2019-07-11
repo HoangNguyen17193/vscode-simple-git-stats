@@ -18,7 +18,9 @@
     "commit",
     "chart",
     "analytics",
-    "git stats"
+    "git stats",
+    "log",
+    "history"
   ],
   "repository": {
     "url": "https://github.com/HoangNguyen17193/vscode-simple-git-stats"
