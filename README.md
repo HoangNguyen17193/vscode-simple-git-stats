@@ -6,7 +6,7 @@ Simple and efficient way to view statistics in git repository directly within Vi
 
 ## Main Features
 - View commit statistics as a pie chart (based on [chartjs](https://www.chartjs.org/))
-- View contribute statistics (comming soon)
+- View contribution statistics (comming soon)
 
 ## Useful commands
 Open the Command Palette (Command+Shift+P on macOS and Ctrl+Shift+P on Windows/Linux) and type in one of the following commands:
