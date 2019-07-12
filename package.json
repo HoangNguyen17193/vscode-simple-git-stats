@@ -3,7 +3,7 @@
   "displayName": "Simple GIT Stats",
   "description": "Simple and efficient way to view statistics in git repository directly within Visual Studio Code.",
   "publisher": "Tino",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "engines": {
     "vscode": "^1.36.0"
   },
