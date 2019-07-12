@@ -1,6 +1,6 @@
 # simple-git-stats
 
-[![Build Status](https://travis-ci.org/HoangNguyen17193/vscode-simple-git-stats.svg?branch=master)](https://travis-ci.org/HoangNguyen17193/vscode-simple-git-stats)
+[![Build Status](https://travis-ci.org/HoangNguyen17193/vscode-simple-git-stats.svg?branch=master)](https://travis-ci.org/HoangNguyen17193/vscode-simple-git-stats) [![Marketplace Version](https://vsmarketplacebadge.apphb.com/version-short/Tino.simple-git-stats.svg?logo=visual-studio-code&color=blue)](https://marketplace.visualstudio.com/items?itemName=Tino.simple-git-stats) [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/Tino.simple-git-stats.svg?color=blue)](https://marketplace.visualstudio.com/items?itemName=Tino.simple-git-stats) [![Download](https://vsmarketplacebadge.apphb.com/downloads-short/Tino.simple-git-stats.svg?color=blue)](https://marketplace.visualstudio.com/items?itemName=Tino.simple-git-stats) [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/Tino.simple-git-stats.svg?color=blue)](https://marketplace.visualstudio.com/items?itemName=Tino.simple-git-stats)
 
 Simple and efficient way to view statistics in git repository directly within Visual Studio Code.
 
