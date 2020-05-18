@@ -38,7 +38,14 @@ export default class CommitsPanel {
   }
 
   private getWebviewContent(comitsPerAuthor: any | [], config:any, ChartJSSrc: vscode.Uri) {
-    const labels = comitsPerAuthor.map((commit:any) => `'${commit.author} (${commit.totalCommits})'`).join(', ');
+    const totalCommits = comitsPerAuthor
+    .map((commitPerAuthor: any) => parseInt(commitPerAuthor.totalCommits))
+    .reduce((total: any, commits: any) => total + commits, 0);
+    const labels = comitsPerAuthor
+    .map((commit:any) => {
+      const percentage =  ((parseInt(commit.totalCommits) *100) / totalCommits).toFixed(2)+"%";
+      return `'${commit.author} (${commit.totalCommits}) ${percentage}'`;
+    }).join(', ');
     const data = (comitsPerAuthor.map((commit:any) => commit.totalCommits)).toString();
     const bodyStyle = (config.width > 0 && config.height >0) ? `body { width:  ${config.width}px; height: ${config.width}px}` : '';
     return `<!DOCTYPE html>
